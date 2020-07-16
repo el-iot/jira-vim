@@ -4,4 +4,4 @@ function! <SID>JiraVimSelectSprint()
     execute "JiraVimSprintOpen " l:sprintName
 endfunction
 
-command JiraVimSelectSprint call <SID>JiraVimSelectSprint()
+command! JiraVimSelectSprint call <SID>JiraVimSelectSprint()

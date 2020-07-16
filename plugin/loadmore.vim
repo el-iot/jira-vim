@@ -11,7 +11,7 @@ function! <SID>JiraVimLoadMore()
 
     " Move the cursor back to the more line
     execute ":" . l:moreline
-    
+
     execute "python3 sys.argv = [\"" . l:categoryName . "\", " . l:moreline . "]"
     if &filetype ==# "jirasprintview"
         execute "python3 python.sprints.more.JiraVimLoadMore(sessionStorage)"
@@ -24,4 +24,4 @@ function! <SID>JiraVimLoadMore()
     endif
 endfunction
 
-command JiraVimLoadMore call <SID>JiraVimLoadMore()
+command! JiraVimLoadMore call <SID>JiraVimLoadMore()
