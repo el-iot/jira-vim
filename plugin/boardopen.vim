@@ -1,8 +1,7 @@
-
 function! <SID>JiraVimBoardOpen(name)
     let l:name = JiraVimTrimHelper(a:name)
     echo "Loading board " . l:name
-    call check#CheckStorageSession()  
+    call check#CheckStorageSession()
 
     execute "python3 sys.argv = [\"" . l:name . "\"]"
     execute "python3 python.boards.open.JiraVimBoardOpen(sessionStorage)"

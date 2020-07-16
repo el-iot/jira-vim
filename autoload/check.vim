@@ -1,5 +1,3 @@
-
-
 function! check#CheckStorageSession()
 
     " Check that credential variables are set

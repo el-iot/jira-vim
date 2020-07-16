@@ -1,4 +1,3 @@
-
 setl buftype=nofile
 setl hidden
 

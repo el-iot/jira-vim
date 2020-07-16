@@ -1,4 +1,3 @@
-
 function! load_function#LoadSessionStorage()
     " Add the python package directory to path
     python3 from python.common.sessionObject import SessionObject
