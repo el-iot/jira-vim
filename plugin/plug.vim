@@ -1,25 +1,25 @@
 " boards
-command! -nargs=1 JiraVimBoardOpen call jira#JiraVimBoardOpen(<q-args>)
-command! -nargs=1 JiraVimBoardOpenNosp call jira#JiraVimBoardOpenNoSp(<q-args>)
+command! -nargs=1 JiraBoardOpen call jira#JiraVimBoardOpen(<q-args>)
+command! -nargs=1 JiraBoardOpenNosp call jira#JiraVimBoardOpenNoSp(<q-args>)
 
 " issues
-command! -nargs=1 JiraVimIssueOpen call board#JiraVimIssueOpen(<q-args>)
-command! -nargs=1 JiraVimIssueOpenSp call board#JiraVimIssueOpenSp(<q-args>)
+command! -nargs=1 JiraIssueOpen call board#JiraVimIssueOpen(<q-args>)
+command! -nargs=1 JiraIssueOpenSp call board#JiraVimIssueOpenSp(<q-args>)
 
 " utils
-command! JiraVimLoadMore call jira#JiraVimLoadMore()
-command! JiraVimReturn call jira#JiraVimReturn()
+command! JiraLoadMore call jira#JiraVimLoadMore()
+command! JiraReturn call jira#JiraVimReturn()
 
 " search
-command! -nargs=1 JiraVimSearchOpen call jira#JiraVimSearch(<q-args>)
-command! -nargs=1 JiraVimSearchPriorityUnassigned call jira#JiraVimSearch("assignee is empty and priority >= " . <q-args> . " order by priority desc")
-command! JiraVimSearchAssigned call jira#JiraVimSearch("assignee=currentUser()")
+command! -nargs=1 JiraSearchOpen call jira#JiraVimSearch(<q-args>)
+command! -nargs=1 JiraSearchPriorityUnassigned call jira#JiraVimSearch("assignee is empty and priority >= " . <q-args> . " order by priority desc")
+command! JiraSearchAssigned call jira#JiraVimSearch("assignee=currentUser()")
 
 " select issues
-command! -nargs=1 -complete=command JiraVimSelectIssue call jira#JiraVimSelectIssue(<q-args>)
-command! JiraVimSelectIssueNosp call jira#JiraVimSelectIssue("JiraVimIssueOpen")
-command! JiraVimSelectIssueSp call jira#JiraVimSelectIssue("JiraVimIssueOpenSp")
+command! -nargs=1 -complete=command JiraSelectIssue call jira#JiraVimSelectIssue(<q-args>)
+command! JiraSelectIssueNosp call jira#JiraVimSelectIssue("JiraVimIssueOpen")
+command! JiraSelectIssueSp call jira#JiraVimSelectIssue("JiraVimIssueOpenSp")
 
 " select sprint
-command! JiraVimSelectSprint call jira#JiraVimSelectSprint()
-command! -nargs=1 JiraVimSprintOpen call jira#JiraVimSprintOpen(<q-args>)
+command! JiraSelectSprint call jira#JiraVimSelectSprint()
+command! -nargs=1 JiraSprintOpen call jira#JiraVimSprintOpen(<q-args>)
