@@ -12,7 +12,7 @@ def JiraVimSearchOpen(sessionStorage):
     sid = uuid.uuid4()
     buf, new = sessionStorage.getBuff(objId=sid)
     vim.command("sbuffer "+str(buf.number))
-    vim.command("set modifiable")
+    vim.command("setlocal modifiable")
     if new:
         search = Search(query, connection)
         search.query_id = sid
@@ -20,5 +20,5 @@ def JiraVimSearchOpen(sessionStorage):
         line = 0
         line = DrawUtil.draw_header(buf, search, "Search for \""+query+"\"") + 1
         line = DrawUtil.draw_items(buf, search, sessionStorage, line=line)
-    vim.command("set nomodifiable")
+    vim.command("setlocal nomodifiable")
     DrawUtil.set_filetype(search)

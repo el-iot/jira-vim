@@ -1,4 +1,3 @@
-
 let s:script_dir = expand("<sfile>:p:h") . "/"
 
 " Make sure that all the necessary parts are in place {{{

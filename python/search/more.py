@@ -7,7 +7,7 @@ def JiraVimLoadMore(sessionStorage):
     _, more_line = tuple(sys.argv)
 
     buf = vim.current.buffer
-    vim.command("set modifiable")
+    vim.command("setlocal modifiable")
 
     del buf[more_line-1]
     del buf[more_line-1]

@@ -13,7 +13,7 @@ def JiraVimSprintOpen(sessionStorage, isSplit=True):
         vim.command("sbuffer "+str(buf.number))
     else:
         vim.command("buffer "+str(buf.number))
-    vim.command("set modifiable")
+    vim.command("setlocal modifiable")
 
     sprint = sessionStorage.getSprint(sprintName)
     if not sprint:
@@ -22,4 +22,4 @@ def JiraVimSprintOpen(sessionStorage, isSplit=True):
     DrawUtil.draw_header(buf, sprint, sprintName)
     DrawUtil.draw_items(buf, sprint, sessionStorage)
     DrawUtil.set_filetype(sprint)
-    vim.command("set nomodifiable")
+    vim.command("setlocal nomodifiable")

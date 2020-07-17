@@ -18,7 +18,7 @@ def JiraVimIssueOpen(sessionStorage, isSplit=False):
         vim.command("sbuffer "+str(buf.number))
     else:
         vim.command("buffer "+str(buf.number))
-    vim.command("set modifiable")
+    vim.command("setlocal modifiable")
     if new:
         issue = Issue(issueKey, connection)
         project = str(issue.getField("project"))
@@ -51,5 +51,5 @@ def JiraVimIssueOpen(sessionStorage, isSplit=False):
         line = DrawUtil.draw_category(buf, issue, comments, line=line, formatter=comment_formatter, str_generator=": ".join) + 1
         buf.append("")
 
-    vim.command("set nomodifiable")
+    vim.command("setlocal nomodifiable")
     vim.command("normal! gg")
